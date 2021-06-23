@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="statbank",
-    version="1.0.0",
+    version="1.0.1",
     license="MIT",
     author="Bytes & Brains",
     author_email="developers@bytesandbrains.com",

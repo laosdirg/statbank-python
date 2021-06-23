@@ -23,7 +23,10 @@ class Data(Resource):
         locale.setlocale(locale.LC_NUMERIC, config.LOCALES[lang])
         # empty strings are handled as nulled values
         self.value = None if not value else locale.atof(value)
-        locale.resetlocale()
+
+        # see https://github.com/bytesandbrains/statbank-python/issues/1
+        # locale.resetlocale()
+
         # parse time as timestamp
         timestring = row.pop('TID').split(' ', 1)[0]
         self.time = time.parse(timestring)
